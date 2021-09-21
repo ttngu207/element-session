@@ -30,7 +30,7 @@ def activate(schema_name, create_schema=True, create_tables=True, linking_module
 class Session(dj.Manual):
     definition = """
     -> Subject
-    session_datetime: datetime(3)
+    session_datetime: datetime
     """
 
 
