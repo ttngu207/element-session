@@ -53,15 +53,16 @@ class Session(dj.Manual):
 
     Attributes:
         Subject (foreign key): Key for Subject table
-        session_id (int): Unique numeric session ID
+        session_id ( VARCHAR(16) ): Unique numeric session ID
         session_datetime (datetime): date and time of the session
     """
 
     definition = """
+    # Top-level, singular, discrete instance of an experiment or task run
     -> Subject
-    session_id: int
+    session_id                               : VARCHAR(16)                 # session number or other identifier
     ---
-    session_datetime: datetime
+    session_datetime=NULL                    : DATETIME                    # beginning of a session as a microsecond precision datetime
     """
 
     class Attribute(dj.Part):
