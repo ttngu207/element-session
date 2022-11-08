@@ -55,6 +55,7 @@ class Session(dj.Manual):
         Subject (foreign key): Key for Subject table
         session_id ( VARCHAR(16) ): Unique numeric session ID
         session_datetime (datetime): date and time of the session
+        session_type( VARCHAR(32) ): type of session, e.g. 'behavior', 'ephys', 'training', 'recording'
     """
 
     definition = """
@@ -63,6 +64,7 @@ class Session(dj.Manual):
     session_id                               : VARCHAR(16)                 # session number or other identifier
     ---
     session_datetime=NULL                    : DATETIME                    # beginning of a session as a microsecond precision datetime
+    session_type=NULL                        : VARCHAR(32)                 # type of session, e.g. 'behavior', 'ephys', 'training', 'recording'
     """
 
     class Attribute(dj.Part):
