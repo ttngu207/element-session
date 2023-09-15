@@ -63,6 +63,9 @@ class Session(dj.Manual):
     -> Subject
     session_id                               : VARCHAR(16)                 # session number or other identifier
     ---
+    subject_number                           : INT                         # e.g. 'm' number
+    session_number                           : INT                         # e.g. 'c' number
+    run_number                               : INT                         # e.g. 'r' number
     session_datetime=NULL                    : DATETIME                    # beginning of a session as a microsecond precision datetime
     session_type=NULL                        : VARCHAR(32)                 # type of session, e.g. 'behavior', 'ephys', 'training', 'recording'
     """
