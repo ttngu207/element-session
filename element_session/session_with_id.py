@@ -73,7 +73,7 @@ class Session(dj.Manual):
         Attributes:
             Session (foreign key): Key for Session table
             attribute_name ( varchar(32) ): Name shared across instances of attribute
-            attribute_value ( varchar(2000), optional ):  Attribute value
+            attribute_value ( varchar(16250), optional ):  Attribute value
             attribute_blob (longblob, optional): Optional data store field
         """
 
@@ -81,7 +81,7 @@ class Session(dj.Manual):
         -> master
         attribute_name: varchar(32)
         ---
-        attribute_value='': varchar(2000)
+        attribute_value='': varchar(16250)
         attribute_blob=null: longblob
         """
 
