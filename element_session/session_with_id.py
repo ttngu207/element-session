@@ -150,3 +150,26 @@ class ProjectSession(dj.Manual):
     -> Project
     -> Session
     """
+
+
+# ---- Experiment Protocols ----
+
+
+@schema
+class ExperimentProtocol(dj.Lookup):
+    definition = """
+    protocol_number: int
+    ---
+    protocol_name: varchar(64)
+    """
+
+    contents = [(153, "FLOW_PARSING_CI_HYBRID")]
+
+
+@schema
+class SessionProtocol(dj.Manual):
+    definition = """
+    -> Session
+    ---
+    -> ExperimentProtocol
+    """
